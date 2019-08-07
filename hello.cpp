@@ -1,11 +1,23 @@
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <regex>
+
 using namespace std;
 
 int main() {
-    int pracArray[3];
-    for(int i = 0;i < 3;i++){
-        pracArray[i] = (i*2);
-        cout << "Array position " << i << " is " << pracArray[i] << endl;
+    string pracArray[100];
+    string currline;
+    ifstream testfile ("test.txt");
+    if (testfile.is_open())
+    {
+        while (getline(testfile,currline))
+        {
+            
+        }
+        testfile.close();
     }
+
+    else cout << "Unable to open file";
     return 0;
 }
