@@ -3,14 +3,19 @@
 #include <string>
 #include <regex>
 #include <queue>
+#include "hashtable.h"
 
 using namespace std;
 
 int main() {
     string pracArray[100];
     string currline;
+    hashtable test;
 
     queue <string> wordholder;
+
+    test.setTest(2);
+    cout << test.getTest();
 
     ifstream testfile ("test.txt");
     if (testfile.is_open())
