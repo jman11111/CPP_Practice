@@ -3,19 +3,15 @@
 #include <string>
 #include <regex>
 #include <queue>
-#include "hashtable.h"
+#include "hashtable.cpp"
 
 using namespace std;
 
 int main() {
     string pracArray[100];
     string currline;
-    hashtable test;
-
+    hashtable<int,string> test;
     queue <string> wordholder;
-
-    test.setTest(2);
-    cout << test.getTest();
 
     ifstream testfile ("test.txt");
     if (testfile.is_open())
@@ -31,8 +27,10 @@ int main() {
 
         for(int i = 0;i<qsize;i++){
             cout << wordholder.front() << "\n";
+            test.insertNode(test.hashCode(i),wordholder.front());
             wordholder.pop();
         }
+        test.display();
     }
 
     else cout << "Unable to open file";

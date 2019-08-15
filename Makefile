@@ -1,11 +1,11 @@
 CFLAGS = -O
 CC = g++
 
-wordcount: hello.o hashtable.o
-	$(CC) $(CFLAGS) -o wordcount hello.o hashtable.o
+wordcount: main.o hashtable.o
+	$(CC) $(CFLAGS) -o wordcount main.o hashtable.o
 
-hello.o: hello.cpp
-	$(CC) $(CFLAGS) -c hello.cpp
+main.o: main.cpp
+	$(CC) $(CFLAGS) -c main.cpp
 
 hashtable.o: hashtable.cpp
 	$(CC) $(CFLAGS) -c hashtable.cpp
